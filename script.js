@@ -27,9 +27,25 @@ let weather = {
         "Pressure: "+data.main.pressure + "%";
         document.querySelector(".wind").innerText =
           "Wind speed: " +data.wind.speed + " km/h";
-        document.querySelector(".weather").classList.remove("loading");
-        document.body.style.backgroundImage =
-          "url('https://source.unsplash.com/1600x900/?" + name + "')";
+        // document.querySelector(".weather").classList.remove("loading");
+        // document.body.style.backgroundImage =
+        //   "url('https://source.unsplash.com/1600x900/?" + name + "')";
+        if (data.weather[0].main == 'Sunny')
+          document.body.style.backgroundImage = "url('sunny.jpeg')"
+        else if (data.weather[0].main == 'Mist')
+          document.body.style.backgroundImage = "url('mist.jpeg')"
+        else if (data.weather[0].main == 'Haze')
+          document.body.style.backgroundImage = "url('haze.jpeg')"
+        else if (data.weather[0].main == 'Snow')
+          document.body.style.backgroundImage = "url('snow.jpeg')"
+        else if (data.weather[0].main == 'Smoke')
+          document.body.style.backgroundImage = "url('sunny.jpeg')"
+        else if (data.weather[0].main == 'Clear')
+          document.body.style.backgroundImage = "url('clear.jpeg')"
+        else if (data.weather[0].main == 'Clouds')
+          document.body.style.backgroundImage = "url('clouds.jpeg')"
+        else if (data.weather[0].main == 'Rain')
+          document.body.style.backgroundImage = "url('rainy.jpeg')"
       },
       search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
@@ -45,4 +61,4 @@ let weather = {
           weather.search();
         }
       });      
-      weather.fetchWeather("delhi");
+     weather.fetchWeather("delhi");
