@@ -39,8 +39,10 @@ let weather = {
         //   document.body.style.backgroundImage = "url('snow.jpeg')"
         // else if (data.weather[0].main == 'Smoke')
         //   document.body.style.backgroundImage = "url('sunny.jpeg')"
-        console.log(1);
-        document.body.style.backgroundImage = "url(`${data.weather[0].main}`.jpeg')"
+        console.log(data.weather[0].main)
+        let c=`url(${data.weather[0].main}.jpeg)`
+        console.log(c)
+        document.body.style.backgroundImage=c
         // else if (data.weather[0].main == 'Clouds')
         //   document.body.style.backgroundImage = "url('clouds.jpeg')"
         // else if (data.weather[0].main == 'Rain')
